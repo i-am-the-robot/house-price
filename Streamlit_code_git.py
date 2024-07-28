@@ -11,9 +11,14 @@ loc_dic = {
     "rural"  : 0
     }
 
-def predict_price(data):
-    data = data.values
-    predicted_price = pred.predict(data)
+def predict_price(input_data):
+    input_data_as_numpy_array = np.asarray(input_data)
+
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+
+    prediction = pred.predict(input_data_reshaped)
+    predicted_price = pred.predict(input_data_reshaped)
     return predicted_price[0]
 
     
@@ -35,7 +40,7 @@ def main():
     location = loc_dic.get(location_word, 0)
     
     if st.button("House Price"):
-        user_data=pd.DataFrame({
+        input_data_reshaped=pd.DataFrame({
         "House Age" : [house_age],
         "Numbers of Bedrooms": [no_bedroom],
         "Number of Bathrooms" :[no_bathroom],
@@ -43,7 +48,7 @@ def main():
         "Location" : [location]
         })
     
-        predicted_price = predict_price(user_data)
+        predicted_price = predict_price(input_data_reshaped)
         predicted_price_rounded = round(predicted_price, 2) #rounded to 2 decimal places
         
         
