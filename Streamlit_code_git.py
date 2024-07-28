@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import streamlit as st
 import pickle
-
-model_path = 'house-price/House_model1.pkl'
-model_in = open(model_path, 'rb')
-pred = pickle.load(model_in)
+pred = pickle.load(open('House_model','rb'))
+#model_path = 'house-price/House_model1.pkl'
+#model_in = open(model_path, 'rb')
+#pred = pickle.load(model_in)
 
 loc_dic = {
     "urban": 2,
