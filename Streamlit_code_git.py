@@ -3,11 +3,7 @@ import pandas as pd
 import pickle
 pred = pickle.load(open('House_model1.pkl','rb'))
 
-loc_dic = {
-    "urban": 2,
-    "suburban" : 1,
-    "rural"  : 0
-    }
+
 
 def predict_price(data):
     predicted_price=pred.predict(data)[0]
@@ -28,9 +24,7 @@ def main():
     no_bedroom = st.number_input(" Number of Bedroom")
     no_bathroom = st.number_input(" Number of Bathroom")
     area = st.number_input ("Area in Square ft ")
-    location_word =st.text_input(" Location (Rural, SubUrban or Urban Area?)").lower()
-    location = loc_dic.get(location_word, 0)
-    
+    location_word =st.text_input(" Location (Rural, SubUrban or Urban Area?)")
     
     if st.button("House Price"):
         user_data=pd.DataFrame({
