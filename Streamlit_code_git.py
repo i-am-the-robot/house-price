@@ -9,7 +9,7 @@ blob = bucket.blob(model_path)
 blob.download_to_filename('local_model.pkl') 
 
 
-model_path = './'House_model1.pkl'
+model_path = './House_model1.pkl'
 model_in = open(model_path, 'rb')
 pred = pickle.load(model_in)
 
