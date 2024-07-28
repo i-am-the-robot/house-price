@@ -3,11 +3,14 @@ import pandas as pd
 import streamlit as st
 import pickle
 
+storage_client = storage.Client()
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(model_path)
+blob.download_to_filename('local_model.pkl') 
 
 
-
-
-model_in = open('House_model1.pkl', 'rb')
+model_path = './'House_model1.pkl'
+model_in = open(model_path, 'rb')
 pred = pickle.load(model_in)
 
 loc_dic = {
