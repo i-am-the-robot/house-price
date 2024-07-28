@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-pred = pickle.load(open('House_model1.pkl','rb'))
+pred= pickle.load(open('House_model1','rb'))
 
 
 loc_dic = {
