@@ -1,4 +1,4 @@
-import streamlit as st
+himport streamlit as st
 import pandas as pd
 import pickle
 pred = pickle.load(open('House_model1.pkl','rb'))
@@ -14,7 +14,7 @@ def predict_price(data):
     data_as_numpy_array = np.asarray(data)
     data_reshaped = data_as_numpy_array.reshape(1,-1)
 
-    predicted_price=pred.predict(data_reshaped)[0]
+    predicted_price=pred.predict(data_reshaped)
     return predicted_price
 
     
