@@ -1,7 +1,7 @@
 himport streamlit as st
 import pandas as pd
 import pickle
-pred = pickle.load(open('House_model1.pkl','rb'))
+pred = pickle.load(open('House_mdel1.pkl','rb'))
 
 
 loc_dic = {
@@ -26,11 +26,11 @@ def main():
     
     st.write("LET US KNOW YOUR TASTE")
     global no_bedroom, no_bathroom, location, area, house_age
-    house_age = int(st.number_input("House Age"))
+    house_age = (st.number_input("House Age"))
     no_bedroom = st.number_input(" Number of Bedroom")
     no_bathroom = st.number_input(" Number of Bathroom")
     area = st.number_input ("Area in Square ft ")
-    location_word =st.text_input(" Location (Rural, SubUrban or Urban Area?)").lower()
+    location_word =st.number_input(" Location (Rural, SubUrban or Urban Area?)").lower()
     location = loc_dic.get(location_word, 0)
     
     if st.button("House Price"):
