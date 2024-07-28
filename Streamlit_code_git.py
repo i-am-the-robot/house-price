@@ -1,7 +1,7 @@
 himport streamlit as st
 import pandas as pd
 import pickle
-pred = pickle.load(open('https://github.com/i-am-the-robot/house-price/blob/9053f5c503aa344cb558024300cffeb8999eed52/House_model1.pkl','rb'))
+pred = pickle.load(open('House_model1.pkl','rb'))
 
 
 loc_dic = {
