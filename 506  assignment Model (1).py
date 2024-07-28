@@ -13,6 +13,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+import pickle
 
 
 # In[51]:
@@ -128,37 +129,10 @@ print("The Mean Square Error = ", mse, "\nThe Mean Absolute Error = ", mae, "\nT
 # In[121]:
 
 
-import pickle
-model_in= open("House_model1.pkl", 'rb')
-classy = pickle.load(model_in)
-
-
-# In[123]:
-
-
-import pickle
-model_out= open("House_model1.pkl", 'wb')
-pickle.dump(model, model_out)
-model_out.close
-
-
-# In[122]:
-
-
-input_data = (2003, 3, 2, 82450, 2)
-input_data_as_numpy_array = np.asarray(input_data)
-input_data_reshaped =input_data_as_numpy_array.reshape(1,-1)
-prediction = model.predict(input_data_reshaped)
-print(prediction)
-
-
-# In[ ]:
 
 
 
 
-
-# In[ ]:
 
 
 
