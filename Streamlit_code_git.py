@@ -11,7 +11,10 @@ loc_dic = {
     }
 
 def predict_price(data):
-    predicted_price=pred.predict(data)[0]
+    data_as_numpy_array = np.asarray(data)
+    data_reshaped = data_as_numpy_array.reshape(1,-1)
+
+    predicted_price=pred.predict(data_reshaped)[0]
     return predicted_price
 
     
