@@ -7,7 +7,7 @@ import pickle
 
 
 
-model_in = open('C:\\Users\PC\House_model1.pkl', 'rb')
+model_in = open('\House_model1.pkl', 'rb')
 pred = pickle.load(model_in)
 
 loc_dic = {
