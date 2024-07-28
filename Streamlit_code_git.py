@@ -2,9 +2,10 @@ import streamlit
 import pandas as pd
 import pickle
 import numpy as np
-pred = pickle.load(open('House_model1.pkl','rb'))
 
-
+model_file = 'House_model.pkl'
+with open(model_file, 'rb') as file:
+    pred = pickle.load(file)
 loc_dic = {
     "urban": 2,
     "suburban" : 1,
