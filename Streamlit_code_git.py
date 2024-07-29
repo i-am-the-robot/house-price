@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 import numpy as np
 
-pred = pickle.load(open('house_mod.sav', 'rb'))
+pred = pickle.load(open('trained.sav', 'rb'))
 loc_dic = {
     "urban": 2,
     "suburban" : 1,
