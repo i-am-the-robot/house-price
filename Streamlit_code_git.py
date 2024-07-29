@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 import numpy as np
 
-model_file = 'house-price/house_mod.sav.pkl'
+model_file = 'house_mod.sav.pkl'
 with open(model_file, 'rb') as file:
     pred = pickle.load(file)
 loc_dic = {
